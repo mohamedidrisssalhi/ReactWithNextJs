@@ -1,57 +1,34 @@
-// Importing required Next.js components
-import Link from 'next/link';
+// Importing Next.js components and types
+import { Metadata } from 'next';
 import Image from 'next/image';
 
-// Main homepage component
-export default function HomePage() {
+// SEO metadata for the projects page
+export const metadata: Metadata = {
+  title: 'Projects',
+  description: 'Explore Idris Salhi&apos;s portfolio of projects, showcasing modern web development and creative solutions.',
+};
+
+// Projects showcase page component
+export default function ProjectsPage() {
   return (
-    // Main container with responsive max width
-    <div className="max-w-7xl mx-auto">
-      {/* Hero Section - Full screen height with centered content */}
-      <section className="section min-h-screen flex flex-col justify-center">
+    // Main container with wider max width for project displays
+    <div className="max-w-6xl mx-auto">
+      <section className="section">
         {/* Fade-in animation wrapper */}
         <div className="fade-in">
-          {/* Intro text with teal accent color */}
-          <p className="text-teal-400 font-mono mb-5 text-base">Hi, my name is</p>
-          {/* Main name heading with responsive font sizes */}
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-slate-200 mb-4 leading-tight">
-            Idris.
-          </h1>
-          {/* Secondary heading describing role */}
-          <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-slate-400 mb-8 leading-tight">
-            I build things for the web.
-          </h2>
-          {/* Description paragraph with limited width for readability */}
-          <p className="text-slate-400 text-lg max-w-lg leading-relaxed mb-12">
-            I&apos;m a software engineer specializing in building (and occasionally
-            designing) exceptional digital experiences. Currently, I&apos;m focused on
-            building accessible, human-centered products.
-          </p>
-          {/* Call-to-action buttons with responsive layout */}
-          <div className="flex flex-col sm:flex-row gap-4">
-            {/* Portfolio link button */}
-            <Link href="/projects" className="btn-outline">
-              Check out my work!
-            </Link>
-            {/* About page link button */}
-            <Link href="/about" className="btn-outline">
-              Learn more about me
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Featured Project Preview */}
-      <section className="section">
-        <div className="fade-in">
-          <h2 className="flex items-center text-2xl sm:text-3xl font-bold text-slate-200 mb-12 justify-center">
-            Featured Project
+          {/* Page heading with numbered section and decorative line */}
+          <h1 className="flex items-center text-3xl sm:text-4xl font-bold text-slate-200 mb-16">
+            <span className="text-teal-400 font-mono text-xl sm:text-2xl mr-4">02.</span>
+            Some Things I&apos;ve Built
             <div className="hidden sm:block ml-8 h-px bg-slate-600 flex-grow max-w-xs"></div>
-          </h2>
+          </h1>
           
-          <div className="featured-project">
+          {/* Featured project showcase with image and details */}
+          <div className="featured-project mb-20">
+            {/* Project image container with hover effects */}
             <div className="project-image">
               <div className="relative">
+                {/* Next.js optimized image with lazy loading */}
                 <Image 
                   src="/projects/movie-site.png" 
                   alt="Movie Explorer"
@@ -74,7 +51,8 @@ export default function HomePage() {
                   <p>
                     A React Router-powered movie discovery app that fetches trending films 
                     using a public API. Features search functionality, detailed movie views, 
-                    and responsive design for all devices.
+                    and responsive design for all devices. Built with modern React patterns 
+                    and clean, maintainable code architecture.
                   </p>
                 </div>
                 <ul className="project-tech-list">
@@ -82,6 +60,7 @@ export default function HomePage() {
                   <li>React Router</li>
                   <li>API Integration</li>
                   <li>Responsive Design</li>
+                  <li>JavaScript ES6+</li>
                 </ul>
                 <div className="project-links">
                   <a href="https://github.com/mohamedidrisssalhi/ReactRouter" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
@@ -93,19 +72,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
 
-      {/* Call to Action */}
-      <section className="section text-center">
-        <div className="fade-in">
-          <h2 className="text-3xl font-bold text-slate-200 mb-6">Ready to work together?</h2>
-          <p className="text-slate-400 text-lg max-w-lg mx-auto mb-8">
-            I&apos;m always interested in hearing about new projects and opportunities.
-          </p>
-          <Link href="/contact" className="btn-outline">
-            Get In Touch
-          </Link>
         </div>
       </section>
     </div>
