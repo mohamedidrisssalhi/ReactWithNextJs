@@ -5,8 +5,13 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "deploy:vercel": "vercel --prod",
+    "deploy:netlify": "netlify deploy --prod --dir=out",
+    "preview:vercel": "vercel",
+    "preview:netlify": "netlify deploy --dir=out"
   },
   "dependencies": {
     "next": "15.3.4",
